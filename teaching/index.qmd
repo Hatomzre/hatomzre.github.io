@@ -1,0 +1,44 @@
+---
+title: "Teaching & service"
+description: "Teaching, academic talks, and service by HUANG Yuntong, a PhD Candidate in Mathematics at HKUST."
+body-classes: section-page teaching-page
+page-layout: full
+---
+
+```{=html}
+<main id="main-content" class="page-shell inner-shell" tabindex="-1">
+
+<header class="page-intro">
+  <h1>Teaching &amp; service</h1>
+  <p class="page-deck">At HKUST, my teaching assistantships span calculus, linear algebra, mathematical analysis, and real analysis.</p>
+</header>
+
+<section class="section-block" aria-labelledby="appointments-heading">
+  <h2 id="appointments-heading">Teaching assistantships</h2>
+```
+
+{{< include ../_generated/teaching.md >}}
+
+```{=html}
+</section>
+
+<section class="section-block talks-section" aria-labelledby="talks-heading">
+  <h2 id="talks-heading">Selected talks</h2>
+```
+
+{{< include ../_generated/talks.md >}}
+
+```{=html}
+</section>
+
+<section class="section-block service-section" aria-labelledby="service-heading">
+  <h2 id="service-heading">Academic service</h2>
+```
+
+{{< include ../_generated/service.md >}}
+
+```{=html}
+</section>
+
+</main>
+```

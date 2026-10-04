@@ -1,0 +1,92 @@
+---
+title: "Curriculum vitae"
+description: "Academic CV of HUANG Yuntong, HKUST PhD candidate. Expected graduation: August 2027. Seeking postdoctoral opportunities. Education, publications, teaching, and service."
+body-classes: section-page cv-page
+page-layout: full
+---
+
+```{=html}
+<main id="main-content" class="page-shell inner-shell" tabindex="-1">
+
+<header class="page-intro cv-intro">
+  <div>
+    <h1>Curriculum vitae</h1>
+    <p class="page-deck">PhD Candidate in Mathematics at HKUST.</p>
+```
+
+{{< include ../_generated/availability.md >}}
+
+```{=html}
+  </div>
+</header>
+
+<section class="cv-section cv-profile" aria-labelledby="cv-profile-heading">
+  <h2 id="cv-profile-heading">Research profile</h2>
+  <p>I work on mathematical and computational models of microstructure evolution. My research interests include phase-field modeling, physics-based neural modeling, and graph neural networks.</p>
+</section>
+
+<section class="cv-section" aria-labelledby="education-heading">
+  <h2 id="education-heading">Education</h2>
+  <div class="education-list">
+    <article>
+      <span>2023–2027 (expected)</span>
+      <h3>PhD Candidate in Mathematics</h3>
+      <p>The Hong Kong University of Science and Technology</p>
+      <small>Expected graduation: August 2027. Research in phase-field modeling and computational materials science.</small>
+    </article>
+    <article>
+      <span>2020–2023</span>
+      <h3>MSc in Computational Mathematics</h3>
+      <p>Wuhan University</p>
+      <small>Thesis on energy-splitting methods for two-dimensional discrete dislocation dynamics.</small>
+    </article>
+    <article>
+      <span>2016–2020</span>
+      <h3>BSc in Materials Science and Engineering</h3>
+      <p>Central South University</p>
+      <small>Thesis on numerical simulation of aging precipitation kinetics in an Al-Zn-Mg-Cu alloy.</small>
+    </article>
+  </div>
+</section>
+
+<section class="cv-section cv-split" aria-labelledby="cv-output-heading">
+  <div>
+    <h2 id="cv-output-heading">Publications</h2>
+    <p>Four articles and public preprints in computational materials science, numerical methods, and scientific computing.</p>
+    <a class="text-link" href="../publications/">View publications</a>
+  </div>
+  <div>
+    <h2>Teaching</h2>
+```
+
+{{< include ../_generated/teaching-summary.md >}}
+
+```{=html}
+    <a class="text-link" href="../teaching/">View teaching experience</a>
+  </div>
+</section>
+
+<section class="cv-section" aria-labelledby="cv-awards-heading">
+  <h2 id="cv-awards-heading">Selected awards</h2>
+```
+
+{{< include ../_generated/awards.md >}}
+
+```{=html}
+</section>
+
+<section class="cv-section cv-split" aria-labelledby="cv-methods-heading">
+  <div>
+    <h2 id="cv-methods-heading">Methods</h2>
+    <p>Phase-field modeling · Computational mechanics · Physics-based neural modeling · Graph neural networks · Numerical optimization</p>
+  </div>
+  <div>
+    <h2>Scientific computing</h2>
+    <p>Python · MATLAB · C++ · LaTeX</p>
+  </div>
+</section>
+
+<p class="contact-note"><a href="mailto:yt.huang@connect.ust.hk">Email me</a> to discuss postdoctoral opportunities and research collaborations.</p>
+
+</main>
+```

@@ -1,0 +1,2 @@
+- **Organizer**, EASIAM 2026 Special Student Session · 2026
+- **Host**, HKUST SIAM Student Chapter Annual Meeting · 2025

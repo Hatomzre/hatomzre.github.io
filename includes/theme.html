@@ -1,0 +1,67 @@
+<script>
+(() => {
+  const storageKey = "yuntong-theme";
+  const root = document.documentElement;
+  const media = window.matchMedia("(prefers-color-scheme: dark)");
+  let stored = null;
+
+  try {
+    stored = localStorage.getItem(storageKey);
+  } catch (_) {
+    stored = null;
+  }
+
+  const updateControls = (theme) => {
+    const next = theme === "dark" ? "light" : "dark";
+    document.querySelectorAll(".theme-toggle").forEach((button) => {
+      button.setAttribute("aria-label", `Switch to ${next} mode`);
+      const label = button.querySelector(".theme-toggle-text");
+      if (label) label.textContent = next === "dark" ? "Dark" : "Light";
+    });
+    const color = theme === "dark" ? "#15191E" : "#FFFFFF";
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", color);
+  };
+
+  const applyTheme = (theme, persist = false) => {
+    root.dataset.theme = theme;
+    root.style.colorScheme = theme;
+    if (persist) {
+      stored = theme;
+      try {
+        localStorage.setItem(storageKey, theme);
+      } catch (_) {
+        // The preference still applies for the current page if storage is unavailable.
+      }
+    }
+    updateControls(theme);
+  };
+
+  applyTheme(stored || (media.matches ? "dark" : "light"));
+
+  document.addEventListener("DOMContentLoaded", () => {
+    updateControls(root.dataset.theme);
+    const currentRoute = ["research", "publications", "teaching", "cv"].find(
+      (route) => document.body.classList.contains(`${route}-page`)
+    ) || "home";
+    document.querySelectorAll(`[data-route="${currentRoute}"]`).forEach(
+      (link) => link.setAttribute("aria-current", "page")
+    );
+    const menu = document.querySelector(".mobile-nav");
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && menu?.open) {
+        menu.open = false;
+        menu.querySelector("summary")?.focus();
+      }
+    });
+    document.querySelectorAll(".theme-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        applyTheme(root.dataset.theme === "dark" ? "light" : "dark", true);
+      });
+    });
+  });
+
+  media.addEventListener?.("change", (event) => {
+    if (!stored) applyTheme(event.matches ? "dark" : "light");
+  });
+})();
+</script>

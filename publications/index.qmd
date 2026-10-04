@@ -1,0 +1,21 @@
+---
+title: "Publications"
+description: "Articles and preprints by HUANG Yuntong in computational materials science, numerical methods, and scientific computing."
+body-classes: section-page publications-page
+page-layout: full
+---
+
+```{=html}
+<main id="main-content" class="page-shell inner-shell" tabindex="-1">
+
+<header class="page-intro">
+  <h1>Publications</h1>
+  <p class="page-deck">Journal articles and preprints. My name appears in publications as Yuntong Huang.</p>
+</header>
+```
+
+{{< include ../_generated/publications.md >}}
+
+```{=html}
+</main>
+```

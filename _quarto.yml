@@ -1,0 +1,50 @@
+project:
+  type: website
+  output-dir: _site
+  post-render:
+    - scripts/finalize_site.py
+  render:
+    - index.qmd
+    - research/index.qmd
+    - publications/index.qmd
+    - teaching/index.qmd
+    - cv/index.qmd
+  resources:
+    - robots.txt
+    - assets/images/*
+    - assets/fonts/*
+
+lang: en
+execute:
+  enabled: false
+
+website:
+  title: "HUANG Yuntong"
+  site-url: "https://hatomzre.github.io"
+  description: "HUANG Yuntong is an HKUST PhD candidate in computational materials science. Expected graduation: August 2027. Seeking postdoctoral opportunities."
+  favicon: assets/images/favicon.png
+  image: /assets/images/og-default.png
+  image-alt: "HUANG Yuntong - computational materials scientist"
+  open-graph:
+    locale: en_US
+    site-name: "HUANG Yuntong"
+  twitter-card:
+    card-style: summary_large_image
+  search: false
+  bread-crumbs: false
+
+format:
+  html:
+    theme: none
+    minimal: true
+    css: styles.css
+    toc: false
+    canonical-url: true
+    html-math-method: mathml
+    link-external-icon: false
+    anchor-sections: false
+    include-in-header:
+      - includes/head.html
+      - includes/theme.html
+    include-before-body: includes/header.html
+    include-after-body: includes/footer.html

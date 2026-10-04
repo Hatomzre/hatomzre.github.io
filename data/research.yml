@@ -1,0 +1,46 @@
+{
+  "public_projects": [
+    {
+      "id": "amorphization",
+      "label": "Published research · Phase-field modeling",
+      "title": "Deformation-induced amorphization",
+      "question": "How can a mesoscale model represent the coupling between plastic deformation and amorphous-phase evolution under severe loading?",
+      "approach": "This study couples a phase-field description with finite-deformation elastoplasticity and introduces a deviatoric-stress-dependent transformation strain, allowing phase evolution and mechanical fields to evolve together.",
+      "contribution": "The model describes amorphous-phase nucleation and propagation and captures experimentally reported features including amorphous shear bands, grain-size effects, and surface amorphization.",
+      "publication_key": "huang2026amorphization",
+      "links": [
+        {"label": "DOI", "url": "https://doi.org/10.1016/j.ijsolstr.2025.113691"},
+        {"label": "Preprint", "url": "https://arxiv.org/abs/2407.19043"}
+      ]
+    },
+    {
+      "id": "omniremesh",
+      "label": "Public preprint · Computational mechanics",
+      "title": "OmniRemesh: adaptive remeshing for crystal plasticity",
+      "question": "How can remeshing support crystal plasticity simulations and inverse parameter calibration under large deformation?",
+      "approach": "This collaborative work develops an adaptive, quasi-differentiable remeshing framework for crystal plasticity simulation.",
+      "contribution": "The framework connects large-deformation simulation with gradient-based calibration of constitutive parameters.",
+      "publication_key": "yan2026omniremesh",
+      "links": [
+        {"label": "Read the preprint", "url": "https://arxiv.org/abs/2608.15842"}
+      ]
+    },
+    {
+      "id": "dislocation-dynamics",
+      "label": "Public preprint · Numerical methods",
+      "title": "Energy-based discrete dislocation dynamics",
+      "question": "Can the energy structure of discrete dislocation dynamics be used to reach stable dislocation states more efficiently?",
+      "approach": "The study uses a non-singular stress-field formulation to keep interaction energy finite, recasts two-dimensional discrete dislocation dynamics as an optimization problem, and examines energy-minimization methods.",
+      "contribution": "Numerical comparisons show how energy-based optimization can accelerate relaxation toward stable dislocation configurations.",
+      "publication_key": "huang2022dislocation",
+      "links": [
+        {"label": "View on arXiv", "url": "https://arxiv.org/abs/2211.15831"}
+      ]
+    }
+  ],
+  "interests": [
+    "Phase-field modeling for microstructure evolution, deformation, and interfacial transformations.",
+    "Physics-based neural modeling that embeds governing principles into data-driven prediction.",
+    "Graph neural networks for polycrystalline topology, neighborhood interactions, and evolving microstructures."
+  ]
+}

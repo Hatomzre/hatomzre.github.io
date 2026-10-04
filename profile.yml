@@ -1,0 +1,38 @@
+{
+  "name": "HUANG Yuntong",
+  "alternate_name": "Yuntong Huang",
+  "given_name": "Yuntong",
+  "family_name": "Huang",
+  "role": "PhD Candidate in Mathematics",
+  "affiliation": "The Hong Kong University of Science and Technology",
+  "affiliation_short": "HKUST",
+  "email": "yt.huang@connect.ust.hk",
+  "website": "https://hatomzre.github.io/",
+  "github": "https://github.com/Hatomzre",
+  "scholar": "",
+  "orcid": "",
+  "portrait": "assets/images/portrait.webp",
+  "headline": "Computational materials scientist developing physics-based and learning-enabled models of microstructure evolution.",
+  "availability": "Seeking postdoctoral opportunities.",
+  "expected_completion": "August 2027",
+  "knows_about": [
+    "Computational materials science",
+    "Phase-field modeling",
+    "Physics-based neural modeling",
+    "Graph neural networks",
+    "Polycrystalline materials"
+  ],
+  "awards": [
+    {"name": "RedBird Academic Excellence Award", "organization": "HKUST", "year": "2025"},
+    {"name": "Hong Kong PhD Fellowship", "organization": "Hong Kong Research Grants Council", "year": "2023"},
+    {"name": "National Scholarship", "organization": "Ministry of Education, China", "year": "2018"}
+  ],
+  "service": [
+    {"role": "Organizer", "event": "EASIAM 2026 Special Student Session", "year": "2026"},
+    {"role": "Host", "event": "HKUST SIAM Student Chapter Annual Meeting", "year": "2025"}
+  ],
+  "analytics": {
+    "cloudflare_token": "",
+    "google_site_verification": ""
+  }
+}

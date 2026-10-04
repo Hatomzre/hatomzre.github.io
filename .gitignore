@@ -1,0 +1,12 @@
+/.quarto/
+/_site/
+/__pycache__/
+/figure/
+/assets/cv/
+*.pdf
+*.pyc
+.DS_Store
+Thumbs.db
+
+
+**/*.quarto_ipynb

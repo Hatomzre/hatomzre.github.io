@@ -1,0 +1,32 @@
+---
+title: "Research"
+description: "Research by HUANG Yuntong on phase-field modeling, adaptive remeshing for crystal plasticity, and energy-based methods for dislocation dynamics."
+body-classes: section-page research-page
+page-layout: full
+---
+
+```{=html}
+<main id="main-content" class="page-shell inner-shell" tabindex="-1">
+
+<header class="page-intro">
+  <h1>Research</h1>
+  <p class="page-deck">I study microstructure evolution using mathematical modeling and scientific computing, with interests in phase-field methods, physics-based neural modeling, and graph neural networks.</p>
+</header>
+```
+
+{{< include ../_generated/research-projects.md >}}
+
+```{=html}
+<section class="section-block broader-interests" aria-labelledby="broader-interests-heading">
+  <h2 id="broader-interests-heading">Research interests</h2>
+```
+
+{{< include ../_generated/interests.md >}}
+
+```{=html}
+</section>
+
+<p class="contact-note">For research discussions and postdoctoral opportunities, contact me at <a href="mailto:yt.huang@connect.ust.hk">yt.huang@connect.ust.hk</a>.</p>
+
+</main>
+```
