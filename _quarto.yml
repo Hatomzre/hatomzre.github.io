@@ -13,6 +13,7 @@ project:
     - robots.txt
     - assets/images/*
     - assets/fonts/*
+    - assets/cv/HUANGYuntongCV20261013.pdf
 
 lang: en
 execute:

@@ -5,16 +5,22 @@ from __future__ import annotations
 
 import re
 import json
+import hashlib
 import sys
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
+from render_data import parse_bibtex
+
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "_site"
-BASE_URL = json.loads((ROOT / "profile.yml").read_text(encoding="utf-8"))["website"]
+PROFILE = json.loads((ROOT / "profile.yml").read_text(encoding="utf-8"))
+BASE_URL = PROFILE["website"]
+CV = PROFILE["cv"]
+CV_PATH = Path(CV["file"])
 
 
 def fail(message: str) -> None:
@@ -60,8 +66,33 @@ for relative in required:
     if not (SITE / relative).is_file():
         fail(f"Missing rendered file: {relative}")
 
-if list(SITE.rglob("*.pdf")) or list((ROOT / "assets").rglob("*.pdf")):
-    fail("The owner has not approved publication of a PDF CV. Remove PDF files from public assets and output.")
+if CV_PATH.is_absolute() or CV_PATH.parts[:2] != ("assets", "cv") or ".." in CV_PATH.parts:
+    fail("The approved CV must be a file inside assets/cv.")
+for base, scan in ((ROOT, ROOT / "assets"), (SITE, SITE)):
+    approved = (base / CV_PATH).resolve()
+    pdfs = {path.resolve() for path in scan.rglob("*") if path.is_file() and path.suffix.lower() == ".pdf"}
+    if pdfs != {approved}:
+        fail(f"Only the owner-approved CV may be published in {scan.relative_to(ROOT)}.")
+    if hashlib.sha256(approved.read_bytes()).hexdigest() != CV["sha256"]:
+        fail("The public CV must be byte-for-byte identical to the owner-approved PDF.")
+
+publications = parse_bibtex(ROOT / "publications.bib")
+keys = [entry["key"] for entry in publications]
+if len(set(keys)) != len(keys):
+    fail("Duplicate publication keys.")
+identifiers = [entry["doi"] for entry in publications if entry.get("doi")]
+if len(set(identifiers)) != len(identifiers):
+    fail("Duplicate publication DOIs.")
+for entry in publications:
+    required_fields = ("author", "title", "year", "url")
+    if entry["type"] == "article":
+        required_fields += ("journal", "volume", "pages", "doi")
+    if any(not entry.get(field) for field in required_fields):
+        fail(f"Incomplete publication metadata: {entry['key']}")
+research = json.loads((ROOT / "data/research.yml").read_text(encoding="utf-8"))
+for project in research["public_projects"]:
+    if project["publication_key"] not in keys:
+        fail(f"Research summary lacks a listed public output: {project['id']}")
 
 html_pages = [
     SITE / "index.html",
@@ -88,13 +119,13 @@ internal_references = 0
 for page, parsed in parsed_pages.items():
     for reference in parsed.references:
         url = urlsplit(reference)
-        if not url.scheme and url.path.lower().endswith(".pdf"):
-            fail(f"Unapproved local PDF link in {page.relative_to(SITE)}: {reference}")
         if url.scheme or url.netloc:
             continue
         target = (SITE / unquote(url.path).lstrip("/") if url.path.startswith("/")
                   else page.parent / unquote(url.path)) if url.path else page
         target = target.resolve()
+        if target.suffix.lower() == ".pdf" and target != (SITE / CV_PATH).resolve():
+            fail(f"Unapproved PDF link in {page.relative_to(SITE)}: {reference}")
         if not target.is_relative_to(SITE.resolve()):
             fail(f"Local reference escapes the site: {reference}")
         if target.is_dir():
@@ -117,10 +148,6 @@ if locations != expected_locations:
     fail("Sitemap addresses must exactly match the five canonical routes.")
 
 prohibited = [
-    r"grain\s+boundary\s+grooving",
-    r"KWC[- ]Based",
-    r"graph\s+neural\s+networks?.{0,80}\b(?:architecture|layers?|training|dataset|accuracy|benchmark|performance|results?)\b",
-    r"\bGNN\b.{0,80}\b(?:architecture|layers?|training|dataset|accuracy|benchmark|performance|results?)\b",
     r"pending\s+publication",
     r"\bin\s+preparation\b",
     r"unpublished\s+(?:figure|result|dataset)",
@@ -138,4 +165,5 @@ for path in ROOT.rglob("*"):
             fail(f"Confidentiality check matched {pattern!r} in {path.relative_to(ROOT)}")
 
 print(f"Validation passed: {len(html_pages)} pages, {internal_references} local references, "
-      "landmarks, metadata, imagery, sitemap, PDF exclusion, and confidentiality boundary are intact.")
+      f"{len(publications)} publications, landmarks, metadata, imagery, sitemap, "
+      "approved CV integrity, and public-content boundary are intact.")

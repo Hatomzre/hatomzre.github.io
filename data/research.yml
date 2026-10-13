@@ -1,6 +1,31 @@
 {
   "public_projects": [
     {
+      "id": "vn-graphgg",
+      "label": "Public preprint · Physics-based neural modeling",
+      "title": "VN-GraphGG: graph-based grain growth",
+      "question": "How can grain-scale physical laws and graph neural networks work together to simulate the evolution of polycrystalline microstructures?",
+      "approach": "VN-GraphGG uses the von Neumann–Mullins law to evolve grain areas and a graph neural network to reconstruct the two-dimensional microstructure from a graph of grains and junctions.",
+      "contribution": "Separating grain-growth kinetics from geometric reconstruction allows kinetic coefficients to change without retraining the reconstruction model. The preprint also explores abnormal grain growth with heterogeneous kinetics.",
+      "publication_key": "huang2026vngraphgg",
+      "links": [
+        {"label": "Read the preprint", "url": "https://arxiv.org/abs/2610.13418"}
+      ]
+    },
+    {
+      "id": "grain-boundary-grooving",
+      "label": "SSRN preprint · Phase-field modeling",
+      "title": "Misorientation-dependent grain-boundary grooving",
+      "question": "How does misorientation-dependent grain-boundary energy influence the evolution of a groove where a grain boundary meets a free surface?",
+      "approach": "A Kobayashi–Warren–Carter phase-field model couples conserved density, crystallinity, and orientation to study grain-boundary grooving.",
+      "contribution": "The framework connects grain-boundary energetics with groove evolution and provides a setting for studying the role of crystallographic misorientation.",
+      "publication_key": "huang2026grooving",
+      "links": [
+        {"label": "Read on SSRN", "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7593495"},
+        {"label": "DOI", "url": "https://doi.org/10.2139/ssrn.7593495"}
+      ]
+    },
+    {
       "id": "amorphization",
       "label": "Published research · Phase-field modeling",
       "title": "Deformation-induced amorphization",

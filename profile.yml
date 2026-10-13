@@ -12,6 +12,11 @@
   "scholar": "",
   "orcid": "",
   "portrait": "assets/images/portrait.webp",
+  "cv": {
+    "file": "assets/cv/HUANGYuntongCV20261013.pdf",
+    "updated": "13 October 2026",
+    "sha256": "215cd1f41832c4b8500bfeed8856e6af28b0118385c4991b39b5a985ec16ecec"
+  },
   "headline": "Computational materials scientist developing physics-based and learning-enabled models of microstructure evolution.",
   "availability": "Seeking postdoctoral opportunities.",
   "expected_completion": "August 2027",

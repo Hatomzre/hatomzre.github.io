@@ -212,8 +212,11 @@ def render_publications(entries: list[dict[str, str]], heading_level: int = 2) -
         links = []
         if entry.get("doi"):
             links.append(("DOI", f'https://doi.org/{entry["doi"]}'))
+            if entry.get("howpublished") == "SSRN" and entry.get("url"):
+                links.append(("SSRN", entry["url"]))
         elif entry.get("url"):
-            links.append(("arXiv", entry["url"]))
+            label = "arXiv" if entry.get("archiveprefix", "").casefold() == "arxiv" else "Preprint"
+            links.append((label, entry["url"]))
         if entry.get("preprint"):
             links.append(("Preprint", entry["preprint"]))
         anchors = " ".join(
@@ -350,6 +353,22 @@ def main() -> None:
     talks = load_data("data/talks.yml")
     research = load_data("data/research.yml")
     publications = parse_bibtex(ROOT / "publications.bib")
+
+    cv = profile["cv"]
+    cv_url = "/" + cv["file"]
+    write("_generated/cv-home-link.md", raw_html(
+        f'<a href="{esc(cv_url)}" download>CV (PDF)</a>'
+    ))
+    write("_generated/cv-download.md", raw_html(
+        '<div class="cv-download">'
+        f'<a class="button button-primary" href="{esc(cv_url)}" download>Download CV (PDF)</a>'
+        f'<p class="cv-download-note">2 pages · Updated {esc(cv["updated"])}</p>'
+        '</div>'
+    ))
+    write("_generated/publication-summary.md", raw_html(
+        f'<p>{len(publications)} articles and public preprints in computational materials science, '
+        'numerical methods, and scientific computing.</p>'
+    ))
 
     write("_generated/profile-links.md", raw_html(render_links(profile)))
     write("_generated/availability.md", raw_html(

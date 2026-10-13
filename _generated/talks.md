@@ -3,6 +3,13 @@
 <li class="timeline-item">
   <span class="timeline-year">2026</span>
   <div class="timeline-copy">
+    <h3>Phase-field modeling of grain-boundary grooving with tunable misorientation-dependent energy</h3>
+    <p>EASIAM 2026 Special Student Session · Jeju, South Korea</p>
+  </div>
+</li>
+<li class="timeline-item">
+  <span class="timeline-year">2026</span>
+  <div class="timeline-copy">
     <h3>A Multi-Scale Phase Field Model for Amorphization as a Deformation Mechanism in Nanocrystalline Materials</h3>
     <p>International Conference on Plasticity, Damage &amp; Fracture (ICPDF 2026) · Geelong, Australia</p>
   </div>

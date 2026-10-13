@@ -178,6 +178,8 @@ body.cv-page [data-route="cv"] { color: var(--accent); text-decoration: underlin
 .service-section li { margin-bottom: 13px; font-size: 15px; }
 .cv-intro { max-width: none; display: flex; justify-content: space-between; align-items: center; gap: 38px; }
 .cv-download { flex-shrink: 0; }
+.cv-download-note { margin: 10px 0 0; color: var(--muted); font-size: 12px; }
+.cv-download { flex-shrink: 0; }
 .cv-profile > p { max-width: 830px; }
 .education-list article { display: grid; grid-template-columns: 145px minmax(0,1fr); column-gap: 25px; padding: 16px 0; }
 .education-list article > span { grid-row: 1 / 4; color: var(--muted); font-size: 13px; }

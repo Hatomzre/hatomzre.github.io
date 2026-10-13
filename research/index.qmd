@@ -1,6 +1,6 @@
 ---
 title: "Research"
-description: "Research by HUANG Yuntong on phase-field modeling, adaptive remeshing for crystal plasticity, and energy-based methods for dislocation dynamics."
+description: "Research by HUANG Yuntong on physics-based graph grain growth, phase-field modeling of grain-boundary grooving and amorphization, crystal plasticity, and dislocation dynamics."
 body-classes: section-page research-page
 page-layout: full
 ---

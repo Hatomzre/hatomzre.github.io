@@ -18,6 +18,11 @@ page-layout: full
 
 ```{=html}
   </div>
+```
+
+{{< include ../_generated/cv-download.md >}}
+
+```{=html}
 </header>
 
 <section class="cv-section cv-profile" aria-labelledby="cv-profile-heading">
@@ -38,7 +43,7 @@ page-layout: full
       <span>2020–2023</span>
       <h3>MSc in Computational Mathematics</h3>
       <p>Wuhan University</p>
-      <small>Thesis on energy-splitting methods for two-dimensional discrete dislocation dynamics.</small>
+      <small>Thesis: Optimization based on energy-splitting methods for two-dimensional discrete dislocation dynamics.</small>
     </article>
     <article>
       <span>2016–2020</span>
@@ -52,7 +57,11 @@ page-layout: full
 <section class="cv-section cv-split" aria-labelledby="cv-output-heading">
   <div>
     <h2 id="cv-output-heading">Publications</h2>
-    <p>Four articles and public preprints in computational materials science, numerical methods, and scientific computing.</p>
+```
+
+{{< include ../_generated/publication-summary.md >}}
+
+```{=html}
     <a class="text-link" href="../publications/">View publications</a>
   </div>
   <div>
